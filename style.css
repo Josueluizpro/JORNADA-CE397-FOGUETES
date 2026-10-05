@@ -1,9 +1,4 @@
 
-/* =========================================================
-   JORNADA DE LANÇAMENTO DE FOGUETES
-   SESI CE-397 • Jardim Adelina
-   ========================================================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -16,353 +11,313 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #080808;
-    color: #f2f2f2;
-    line-height: 1.7;
+    background: #f4f4f2;
+    color: #111;
 }
 
 
-/* =========================================================
+/* =========================================
    CAPA
-   ========================================================= */
+========================================= */
 
-.capa {
+.hero {
+    position: relative;
     min-height: 100vh;
 
     display: flex;
     align-items: center;
-    justify-content: center;
 
-    padding: 60px 20px;
+    overflow: hidden;
 
     background:
-        radial-gradient(circle at center, #3b0000 0%, #120000 38%, #050505 75%);
+        radial-gradient(
+            circle at 75% 45%,
+            #8d0b12 0%,
+            #3b070a 25%,
+            #090909 65%,
+            #020202 100%
+        );
 
-    border-bottom: 4px solid #e30613;
-}
-
-.capa-conteudo {
-    max-width: 1000px;
-    text-align: center;
-}
-
-.identificacao {
-    color: #e30613;
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-}
-
-.capa h1 {
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: -2px;
-}
-
-.capa h1 span {
-    display: block;
-    color: #e30613;
-}
-
-.subtitulo {
-    max-width: 750px;
-    margin: 35px auto 20px;
-    font-size: 1.3rem;
-    color: #d5d5d5;
-}
-
-.projeto {
-    margin-top: 35px;
-    color: #999;
-    font-size: 0.95rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    color: white;
 }
 
 
-/* =========================================================
-   CONTEÚDO
-   ========================================================= */
+/* elemento visual da trajetória */
 
-main {
-    width: 100%;
-}
+.hero::after {
+    content: "";
 
-.capitulo {
-    position: relative;
+    position: absolute;
 
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 900px;
+    height: 900px;
 
-    padding: 120px 30px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
 
-    border-bottom: 1px solid #292929;
-}
+    right: -350px;
+    top: -150px;
 
-.numero {
-    color: #e30613;
-    font-size: 0.9rem;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
-}
-
-.capitulo h2 {
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1.1;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-}
-
-.capitulo p {
-    max-width: 850px;
-    margin-bottom: 20px;
-    color: #cfcfcf;
-    font-size: 1.08rem;
+    transform: rotate(-20deg);
 }
 
 
-/* =========================================================
-   MODELOS
-   ========================================================= */
+/* camada escura */
 
-.modelos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
+.hero-overlay {
+    position: absolute;
+    inset: 0;
 
-    margin-top: 45px;
-}
-
-.modelo {
-    padding: 28px 22px;
-
-    background: #111;
-    border: 1px solid #292929;
-
-    border-radius: 10px;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease;
-}
-
-.modelo:hover {
-    transform: translateY(-5px);
-    border-color: #e30613;
-    background: #171717;
-}
-
-.modelo h3 {
-    color: #e30613;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-.modelo p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #aaa;
-}
-
-
-/* =========================================================
-   MODELO 3 — NOSSO DESAFIO
-   ========================================================= */
-
-.modelo.destaque {
-    border: 2px solid #e30613;
-    background: linear-gradient(
-        145deg,
-        #260000,
-        #111
-    );
-}
-
-.destaque-capitulo {
     background:
         linear-gradient(
             90deg,
-            rgba(227, 6, 19, 0.10),
-            transparent
+            rgba(0,0,0,0.92) 0%,
+            rgba(0,0,0,0.70) 45%,
+            rgba(0,0,0,0.15) 100%
         );
 }
 
-.chamada {
-    display: inline-block;
 
-    padding: 8px 15px;
+/* =========================================
+   CONTEÚDO
+========================================= */
+
+.hero-conteudo {
+    position: relative;
+    z-index: 2;
+
+    width: min(1100px, 90%);
+
+    margin: 0 auto;
+}
+
+
+.marca {
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    color: #ffffff;
+}
+
+.marca span {
+    color: #e30613;
+}
+
+
+.linha {
+    width: 70px;
+    height: 4px;
 
     background: #e30613;
-    color: white !important;
 
-    border-radius: 5px;
-
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin: 25px 0;
 }
 
 
-/* =========================================================
-   DUA
-   ========================================================= */
+.categoria {
+    font-size: 0.75rem;
 
-.d-u-a {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    letter-spacing: 4px;
 
-    margin-top: 45px;
+    color: #aaa;
+
+    margin-bottom: 20px;
 }
 
-.d-u-a div {
-    padding: 25px 18px;
 
-    background: #111;
+h1 {
+    max-width: 850px;
 
-    border-left: 3px solid #e30613;
+    font-size: clamp(4rem, 9vw, 8rem);
 
-    border-radius: 5px;
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    font-weight: 300;
 }
 
-.d-u-a strong {
+
+h1 strong {
     display: block;
 
     color: #e30613;
 
+    font-weight: 800;
+}
+
+
+.descricao {
+    max-width: 560px;
+
+    margin-top: 35px;
+
     font-size: 1.2rem;
 
-    margin-bottom: 8px;
-}
+    line-height: 1.6;
 
-.d-u-a span {
-    color: #aaa;
-    font-size: 0.9rem;
+    color: #d0d0d0;
 }
 
 
-/* =========================================================
-   ESPAÇOS PARA FOTOS E VÍDEOS
-   ========================================================= */
+/* =========================================
+   BOTÃO
+========================================= */
 
-.espaco-imagem {
-    min-height: 250px;
+.botao {
+    display: inline-flex;
 
-    margin-top: 40px;
+    align-items: center;
+    gap: 25px;
+
+    margin-top: 45px;
+
+    padding: 17px 25px;
+
+    color: white;
+
+    text-decoration: none;
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    font-size: 0.85rem;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.botao span {
+    color: #e30613;
+
+    font-size: 1.4rem;
+}
+
+.botao:hover {
+    background: #e30613;
+    border-color: #e30613;
+}
+
+.botao:hover span {
+    color: white;
+}
+
+
+/* =========================================
+   SCROLL
+========================================= */
+
+.scroll {
+    position: absolute;
+
+    z-index: 3;
+
+    right: 35px;
+    bottom: 30px;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
+
+    gap: 8px;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 3px;
+
+    color: #888;
+}
+
+.scroll span {
+    color: #e30613;
+
+    font-size: 1.4rem;
+}
+
+
+/* =========================================
+   PRIMEIRA SEÇÃO
+========================================= */
+
+.introducao {
+    min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 
-    border: 1px dashed #555;
+    max-width: 1000px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #111,
-            #080808
-        );
+    margin: auto;
 
-    color: #777;
-
-    text-align: center;
-
-    border-radius: 8px;
-}
-
-.espaco-imagem span {
-    padding: 20px;
+    padding: 100px 30px;
 }
 
 
-/* =========================================================
-   ETAPAS FUTURAS
-   ========================================================= */
+.numero {
+    color: #e30613;
 
-.futuro {
-    opacity: 0.75;
-}
+    font-size: 0.8rem;
 
-.futuro .numero {
-    color: #777;
-}
-
-
-/* =========================================================
-   RODAPÉ
-   ========================================================= */
-
-footer {
-    padding: 50px 20px;
-
-    text-align: center;
-
-    background: #030303;
-
-    border-top: 3px solid #e30613;
-}
-
-footer p {
-    color: #888;
-    margin: 5px;
-}
-
-footer p:first-child {
-    color: #fff;
     font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
 }
 
 
-/* =========================================================
-   RESPONSIVIDADE
-   ========================================================= */
+.introducao h2 {
+    max-width: 750px;
 
-@media (max-width: 800px) {
+    font-size: clamp(2.5rem, 5vw, 5rem);
 
-    .d-u-a {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    line-height: 1;
 
-    .capitulo {
-        padding: 90px 25px;
-    }
-
+    margin-bottom: 35px;
 }
 
 
-@media (max-width: 550px) {
+.pergunta {
+    max-width: 750px;
 
-    .capa {
-        min-height: 90vh;
+    font-size: 1.5rem;
+
+    color: #555;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    .hero-conteudo {
+        width: 88%;
     }
 
-    .capa h1 {
-        font-size: 2.8rem;
+    h1 {
+        font-size: 4rem;
+        letter-spacing: -3px;
     }
 
-    .subtitulo {
-        font-size: 1.05rem;
+    .categoria {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
     }
 
-    .capitulo {
-        padding: 70px 20px;
+    .descricao {
+        font-size: 1rem;
     }
 
-    .capitulo h2 {
-        font-size: 2rem;
-    }
-
-    .d-u-a {
-        grid-template-columns: 1fr;
-    }
-
-    .modelos {
-        grid-template-columns: 1fr;
+    .scroll {
+        display: none;
     }
 
 }
