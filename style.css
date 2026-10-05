@@ -1,7 +1,8 @@
-/* =========================================
+```css
+/* =========================================================
    JORNADA DE LANÇAMENTO DE FOGUETES
    SESI CE-397 • Jardim Adelina
-   ========================================= */
+   ========================================================= */
 
 * {
     margin: 0;
@@ -15,248 +16,354 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #f2f2f2;
     line-height: 1.7;
-    color: #222;
-    background: #f5f5f5;
 }
 
-/* =========================================
+
+/* =========================================================
    CAPA
-   ========================================= */
+   ========================================================= */
 
 .capa {
     min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+
+    padding: 60px 20px;
 
     background:
-        radial-gradient(circle at 20% 20%, #333 0, transparent 25%),
-        radial-gradient(circle at 80% 70%, #444 0, transparent 20%),
-        linear-gradient(135deg, #050505, #171717 50%, #050505);
+        radial-gradient(circle at center, #3b0000 0%, #120000 38%, #050505 75%);
 
-    color: white;
-    padding: 40px 20px;
+    border-bottom: 4px solid #e30613;
 }
 
 .capa-conteudo {
-    max-width: 900px;
+    max-width: 1000px;
+    text-align: center;
 }
 
-.instituicao {
+.identificacao {
+    color: #e30613;
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .capa h1 {
     font-size: clamp(3rem, 8vw, 6.5rem);
     line-height: 1;
-    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: -2px;
 }
 
-.subtitulo {
-    margin-top: 35px;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
+.capa h1 span {
+    display: block;
+    color: #e30613;
 }
 
-.linha {
-    width: 100px;
-    height: 4px;
-    background: #e30613;
-    margin: 35px auto;
+.subtitulo {
+    max-width: 750px;
+    margin: 35px auto 20px;
+    font-size: 1.3rem;
+    color: #d5d5d5;
 }
 
 .projeto {
-    max-width: 650px;
-    margin: auto;
-    font-size: 1.1rem;
-    color: #ddd;
+    margin-top: 35px;
+    color: #999;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-/* =========================================
-   ESTRUTURA
-   ========================================= */
 
-.container {
-    width: min(1100px, 90%);
-    margin: auto;
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+main {
+    width: 100%;
 }
 
-section {
-    padding: 100px 0;
+.capitulo {
+    position: relative;
+
+    max-width: 1100px;
+    margin: 0 auto;
+
+    padding: 120px 30px;
+
+    border-bottom: 1px solid #292929;
 }
 
 .numero {
-    display: inline-block;
+    color: #e30613;
     font-size: 0.9rem;
     font-weight: bold;
-    color: #e30613;
     letter-spacing: 3px;
     margin-bottom: 15px;
 }
 
-h2 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+.capitulo h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
     line-height: 1.1;
     margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
-p {
-    font-size: 1.05rem;
-    max-width: 800px;
+.capitulo p {
+    max-width: 850px;
+    margin-bottom: 20px;
+    color: #cfcfcf;
+    font-size: 1.08rem;
 }
 
-/* =========================================
-   INTRODUÇÃO
-   ========================================= */
 
-.introducao {
-    background: white;
-}
+/* =========================================================
+   MODELOS
+   ========================================================= */
 
-.introducao p + p {
-    margin-top: 20px;
-}
-
-/* =========================================
-   PROJETO
-   ========================================= */
-
-.projeto-info {
-    background: #eeeeee;
-}
-
-/* =========================================
-   JORNADA
-   ========================================= */
-
-.jornada {
-    background: #111;
-    color: white;
-}
-
-.etapas {
+.modelos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 20px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+
+    margin-top: 45px;
 }
 
-.etapa {
-    padding: 30px;
-    border: 1px solid #444;
-    background: #1b1b1b;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+.modelo {
+    padding: 28px 22px;
+
+    background: #111;
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
 }
 
-.etapa:hover {
-    transform: translateY(-8px);
+.modelo:hover {
+    transform: translateY(-5px);
     border-color: #e30613;
+    background: #171717;
 }
 
-.etapa span {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
+.modelo h3 {
     color: #e30613;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
-.etapa h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-}
-
-.etapa p {
+.modelo p {
+    margin: 0;
     font-size: 0.95rem;
-    color: #ccc;
-}
-
-/* =========================================
-   REGISTRO
-   ========================================= */
-
-.registro {
-    background: white;
-}
-
-.espaco-fotos {
-    min-height: 250px;
-    margin-top: 40px;
-    border: 2px dashed #bbb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #777;
-}
-
-/* =========================================
-   ENCERRAMENTO
-   ========================================= */
-
-.encerramento {
-    background: #e30613;
-    color: white;
-    text-align: center;
-}
-
-.encerramento .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.encerramento h2 {
-    max-width: 800px;
-}
-
-.encerramento p {
-    color: #fff;
-}
-
-/* =========================================
-   RODAPÉ
-   ========================================= */
-
-footer {
-    background: #050505;
     color: #aaa;
-    text-align: center;
-    padding: 40px 20px;
 }
 
-footer p {
-    margin: 5px auto;
+
+/* =========================================================
+   MODELO 3 — NOSSO DESAFIO
+   ========================================================= */
+
+.modelo.destaque {
+    border: 2px solid #e30613;
+    background: linear-gradient(
+        145deg,
+        #260000,
+        #111
+    );
+}
+
+.destaque-capitulo {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(227, 6, 19, 0.10),
+            transparent
+        );
+}
+
+.chamada {
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    background: #e30613;
+    color: white !important;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   DUA
+   ========================================================= */
+
+.d-u-a {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+
+    margin-top: 45px;
+}
+
+.d-u-a div {
+    padding: 25px 18px;
+
+    background: #111;
+
+    border-left: 3px solid #e30613;
+
+    border-radius: 5px;
+}
+
+.d-u-a strong {
+    display: block;
+
+    color: #e30613;
+
+    font-size: 1.2rem;
+
+    margin-bottom: 8px;
+}
+
+.d-u-a span {
+    color: #aaa;
     font-size: 0.9rem;
 }
 
-/* =========================================
-   RESPONSIVIDADE
-   ========================================= */
 
-@media (max-width: 600px) {
+/* =========================================================
+   ESPAÇOS PARA FOTOS E VÍDEOS
+   ========================================================= */
+
+.espaco-imagem {
+    min-height: 250px;
+
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px dashed #555;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #080808
+        );
+
+    color: #777;
+
+    text-align: center;
+
+    border-radius: 8px;
+}
+
+.espaco-imagem span {
+    padding: 20px;
+}
+
+
+/* =========================================================
+   ETAPAS FUTURAS
+   ========================================================= */
+
+.futuro {
+    opacity: 0.75;
+}
+
+.futuro .numero {
+    color: #777;
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+footer {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: #030303;
+
+    border-top: 3px solid #e30613;
+}
+
+footer p {
+    color: #888;
+    margin: 5px;
+}
+
+footer p:first-child {
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .d-u-a {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .capitulo {
+        padding: 90px 25px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .capa {
+        min-height: 90vh;
+    }
 
     .capa h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 
     .subtitulo {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 
-    section {
-        padding: 70px 0;
+    .capitulo {
+        padding: 70px 20px;
     }
 
-    .etapas {
+    .capitulo h2 {
+        font-size: 2rem;
+    }
+
+    .d-u-a {
         grid-template-columns: 1fr;
     }
+
+    .modelos {
+        grid-template-columns: 1fr;
+    }
+
 }
+```
